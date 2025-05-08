@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;500;700&display=swap');
 
+/* Mobile-First Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,49 +15,53 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 0.5rem;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Header */
 .header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0.5rem auto 1rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 0.5rem;
 }
 
 .header h1 {
   font-family: 'Allura', cursive;
-  font-size: 4rem;
+  font-size: clamp(1.8rem, 6vw, 2.2rem);
   color: #d6336c;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(214, 51, 108, 0.3);
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(214, 51, 108, 0.3);
 }
 
 /* Countdown */
 .countdown {
   background: #ffe4f3;
-  padding: 1.5rem 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(214, 51, 108, 0.1);
-  margin: 2rem auto;
-  max-width: 800px;
+  padding: clamp(0.8rem, 2vw, 1rem);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.1);
+  margin: 0.5rem auto;
   width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
 .countdown p {
-  font-size: 1.5rem;
+  font-size: clamp(0.9rem, 3vw, 1rem);
   font-weight: 500;
   color: #4b2e39;
+  margin-bottom: 0.5rem;
 }
 
 .timer {
   display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
+  gap: clamp(0.5rem, 1.5vw, 0.8rem);
   font-weight: 700;
   color: #7a2a56;
   justify-content: center;
@@ -65,56 +70,95 @@
 
 .timer div {
   background: white;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
+  padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.6rem, 2vw, 0.8rem);
+  border-radius: 8px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.1);
-  min-width: 80px;
+  box-shadow: 0 3px 8px rgba(214, 51, 108, 0.1);
+  min-width: clamp(40px, 12vw, 50px);
 }
 
 .timer span {
   display: block;
-  font-size: 2.5rem;
+  font-size: clamp(1.4rem, 5vw, 1.6rem);
   color: #d6336c;
 }
 
 /* Celebration */
 .celebration {
   background: #f8bbd0;
-  padding: 2rem;
-  border-radius: 15px;
-  margin: 2rem auto;
-  max-width: 800px;
+  padding: clamp(0.8rem, 2vw, 1rem);
+  border-radius: 10px;
+  margin: 0.5rem auto;
   width: 100%;
+  max-width: 100%;
   color: #4b2e39;
-  box-shadow: 0 6px 15px rgba(214, 51, 108, 0.3);
+  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.3);
   text-align: center;
 }
 
 .celebration h2 {
   font-family: 'Allura', cursive;
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.6rem, 5vw, 1.8rem);
+  margin-bottom: 0.5rem;
 }
 
 .celebration p {
-  font-size: 1.2rem;
-  line-height: 1.5;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  line-height: 1.4;
+}
+
+/* Video Section */
+.video {
+  width: clamp(90%, 95vw, 100%);
+  max-width: 800px;
+  margin: 0.5rem auto;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.video h2 {
+  font-family: 'Allura', cursive;
+  font-size: clamp(1.6rem, 5vw, 1.8rem);
+  color: #d6336c;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(214, 51, 108, 0.3);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  background: #fff0f6;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.3);
+}
+
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* Gallery */
 .gallery {
-  width: 90%;
+  width: clamp(90%, 95vw, 100%);
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 0.5rem auto;
+  padding: 0 0.5rem;
 }
 
 .slide-image {
   width: 100%;
-  height: 500px;
+  height: calc(40vw + 100px); /* Responsive height */
+  max-height: 400px;
   object-fit: contain;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(214, 51, 108, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.3);
   background-color: #fff0f6;
   transition: transform 0.3s ease;
 }
@@ -127,26 +171,29 @@
 /* Slick Slider Adjustments */
 .slick-slider {
   margin: 0 auto;
+  width: 100%;
 }
 
 .slick-dots {
-  bottom: -30px;
+  bottom: -20px;
 }
 
 .slick-dots li button:before {
   color: #d6336c;
-  font-size: 12px;
+  font-size: clamp(8px, 2vw, 10px);
 }
 
 .slick-prev,
 .slick-next {
   z-index: 2; /* Above fireworks */
+  width: 30px;
+  height: 30px;
 }
 
 .slick-prev:before,
 .slick-next:before {
   color: #d6336c;
-  font-size: 30px;
+  font-size: clamp(18px, 5vw, 20px);
 }
 
 /* Fireworks Animation */
@@ -162,8 +209,8 @@
 
 .firework-particle {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background: radial-gradient(circle, #ffffff 20%, #d6336c 60%);
   border-radius: 50%;
   top: var(--y-pos);
@@ -176,12 +223,12 @@
 .firework-particle::after {
   content: '';
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 3px;
+  height: 3px;
   background: #f8bbd0;
   border-radius: 50%;
-  top: -10px;
-  left: -10px;
+  top: -8px;
+  left: -8px;
   animation: trail 1.2s ease-out infinite;
   animation-delay: var(--delay);
 }
@@ -201,15 +248,15 @@
   }
   80% {
     transform: translate(
-      calc(var(--x, 0) * 120px),
-      calc(var(--y, 0) * 120px)
+      calc(var(--x, 0) * 80px),
+      calc(var(--y, 0) * 80px)
     ) scale(1.5);
     opacity: 0.8;
   }
   100% {
     transform: translate(
-      calc(var(--x, 0) * 150px),
-      calc(var(--y, 0) * 150px)
+      calc(var(--x, 0) * 100px),
+      calc(var(--y, 0) * 100px)
     ) scale(0);
     opacity: 0;
   }
@@ -217,10 +264,10 @@
 
 @keyframes sparkle {
   0% {
-    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5);
   }
   100% {
-    box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.8);
   }
 }
 
@@ -230,7 +277,7 @@
     opacity: 1;
   }
   100% {
-    transform: translate(15px, 15px) scale(0);
+    transform: translate(10px, 10px) scale(0);
     opacity: 0;
   }
 }
@@ -250,12 +297,12 @@
   background: #f8bbd0;
   color: #4b2e39;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
-  font-size: 1rem;
+  padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 3vw, 1.2rem);
+  border-radius: 8px;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   font-weight: 500;
   cursor: pointer;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   display: block;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -267,38 +314,88 @@
   outline: none;
 }
 
+/* Footer */
+footer {
+  margin-top: auto;
+  padding: clamp(0.5rem, 2vw, 1rem);
+  text-align: center;
+  color: #d6336c;
+  font-weight: 600;
+  width: 100%;
+}
+
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-  .slide-image {
-    height: 350px;
+@media (min-width: 480px) {
+  .App {
+    padding: 0.8rem;
+  }
+
+  .header {
+    margin: 0.8rem auto 1.2rem;
   }
 
   .header h1 {
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 7vw, 2.8rem);
+  }
+
+  .countdown {
+    padding: clamp(1rem, 2.5vw, 1.2rem);
+    margin: 0.8rem auto;
   }
 
   .countdown p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+  }
+
+  .timer div {
+    min-width: clamp(50px, 12vw, 60px);
+    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(0.8rem, 2.5vw, 1rem);
   }
 
   .timer span {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 5.5vw, 1.8rem);
+  }
+
+  .celebration {
+    padding: clamp(1rem, 2.5vw, 1.2rem);
+    margin: 0.8rem auto;
   }
 
   .celebration h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 6vw, 2.2rem);
+  }
+
+  .celebration p {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+  }
+
+  .video {
+    margin: 0.8rem auto;
+  }
+
+  .video h2 {
+    font-size: clamp(1.8rem, 6vw, 2.2rem);
+  }
+
+  .gallery {
+    margin: 0.8rem auto;
+  }
+
+  .slide-image {
+    height: calc(45vw + 120px);
+    max-height: 450px;
   }
 
   .firework-particle {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
 
   .firework-particle::after {
-    width: 3px;
-    height: 3px;
-    top: -8px;
-    left: -8px;
+    width: 4px;
+    height: 4px;
+    top: -10px;
+    left: -10px;
   }
 
   @keyframes fireworkBurst {
@@ -308,8 +405,8 @@
     }
     80% {
       transform: translate(
-        calc(var(--x, 0) * 90px),
-        calc(var(--y, 0) * 90px)
+        calc(var(--x, 0) * 100px),
+        calc(var(--y, 0) * 100px)
       ) scale(1.5);
       opacity: 0.8;
     }
@@ -323,42 +420,117 @@
   }
 }
 
-@media (max-width: 480px) {
-  .slide-image {
-    height: 250px;
+@media (min-width: 600px) {
+  .App {
+    padding: 1rem;
   }
 
   .header h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 8vw, 3rem);
   }
 
   .countdown p {
-    font-size: 1rem;
+    font-size: clamp(1.2rem, 4vw, 1.3rem);
   }
 
   .timer div {
-    padding: 0.8rem 1rem;
-    min-width: 60px;
+    min-width: clamp(60px, 10vw, 70px);
   }
 
   .timer span {
-    font-size: 1.8rem;
+    font-size: clamp(1.8rem, 6vw, 2rem);
   }
 
   .celebration h2 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 7vw, 2.5rem);
   }
 
-  .firework-particle {
-    width: 6px;
-    height: 6px;
+  .celebration p {
+    font-size: clamp(1rem, 3.5vw, 1.1rem);
   }
 
-  .firework-particle::after {
-    width: 2px;
-    height: 2px;
-    top: -6px;
-    left: -6px;
+  .video h2 {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+
+  .slide-image {
+    height: calc(50vw + 140px);
+    max-height: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  .App {
+    padding: 1.5rem;
+  }
+
+  .header {
+    margin: 1rem auto 1.5rem;
+  }
+
+  .header h1 {
+    font-size: clamp(3rem, 9vw, 3.5rem);
+  }
+
+  .countdown {
+    padding: clamp(1.2rem, 3vw, 1.5rem);
+    margin: 1rem auto;
+  }
+
+  .countdown p {
+    font-size: clamp(1.3rem, 4.5vw, 1.5rem);
+  }
+
+  .timer div {
+    min-width: clamp(70px, 8vw, 80px);
+    padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1rem, 3vw, 1.2rem);
+  }
+
+  .timer span {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+
+  .celebration {
+    padding: clamp(1.2rem, 3vw, 1.5rem);
+    margin: 1rem auto;
+  }
+
+  .celebration h2 {
+    font-size: clamp(2.5rem, 8vw, 3rem);
+  }
+
+  .celebration p {
+    font-size: clamp(1.1rem, 4vw, 1.2rem);
+  }
+
+  .video {
+    margin: 1rem auto;
+  }
+
+  .video h2 {
+    font-size: clamp(2.5rem, 8vw, 3rem);
+  }
+
+  .gallery {
+    margin: 1rem auto;
+  }
+
+  .slide-image {
+    height: calc(55vw + 160px);
+    max-height: 550px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: clamp(22px, 6vw, 25px);
+  }
+
+  .slick-dots {
+    bottom: -25px;
+  }
+
+  .slick-dots li button:before {
+    font-size: clamp(10px, 2.5vw, 12px);
   }
 
   @keyframes fireworkBurst {
@@ -368,26 +540,84 @@
     }
     80% {
       transform: translate(
-        calc(var(--x, 0) * 60px),
-        calc(var(--y, 0) * 60px)
+        calc(var(--x, 0) * 120px),
+        calc(var(--y, 0) * 120px)
       ) scale(1.5);
       opacity: 0.8;
     }
     100% {
       transform: translate(
-        calc(var(--x, 0) * 80px),
-        calc(var(--y, 0) * 80px)
+        calc(var(--x, 0) * 150px),
+        calc(var(--y, 0) * 150px)
       ) scale(0);
       opacity: 0;
     }
   }
 }
 
-/* Footer */
-footer {
-  margin-top: auto;
-  padding: 1rem;
-  text-align: center;
-  color: #d6336c;
-  font-weight: 600;
+@media (min-width: 1024px) {
+  .App {
+    padding: 2rem;
+  }
+
+  .header h1 {
+    font-size: clamp(3.5rem, 10vw, 4rem);
+  }
+
+  .countdown {
+    padding: 1.5rem 2rem;
+    margin: 1.5rem auto;
+  }
+
+  .countdown p {
+    font-size: 1.5rem;
+  }
+
+  .timer div {
+    min-width: 80px;
+    padding: 1rem 1.5rem;
+  }
+
+  .timer span {
+    font-size: 2.5rem;
+  }
+
+  .celebration {
+    padding: 1.5rem 2rem;
+    margin: 1.5rem auto;
+  }
+
+  .celebration h2 {
+    font-size: 3rem;
+  }
+
+  .celebration p {
+    font-size: 1.2rem;
+  }
+
+  .video {
+    margin: 1.5rem auto;
+  }
+
+  .video h2 {
+    font-size: 3rem;
+  }
+
+  .gallery {
+    margin: 1.5rem auto;
+  }
+
+  .slide-image {
+    height: 600px;
+    max-height: 600px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px;
+  }
+
+  .slick-dots {
+    bottom: -30px;
+  }
 }
